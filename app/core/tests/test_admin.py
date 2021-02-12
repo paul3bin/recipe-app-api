@@ -32,10 +32,12 @@ class AdminSiteTests(TestCase):
     def test_user_change_page(self):
         # to test that user edit page works
 
-        url = reverse('admin:core_user_change', args=[self.user.id]) # how to the id is assigned - /admin/core/user/1
+        # how to the id is assigned - /admin/core/user/1
+        url = reverse('admin:core_user_change', args=[self.user.id])
         res = self.client.get(url)
 
-        self.assertEqual(res.status_code, 200) # testing that the status code for the response is 200 which means ok.
+        # testing that the status code for the response is 200 which means ok.
+        self.assertEqual(res.status_code, 200)
 
     def test_create_user_page(self):
         # to test create user page works

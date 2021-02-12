@@ -9,7 +9,7 @@ class UserAdmin(BaseUserAdmin):
     ordering = ['id']  # ordering the list based on ID
     list_display = ['email', 'name']  # listing the user by email and name
     fieldsets = (
-        (None, {'fields': ('email','password')}),
+        (None, {'fields': ('email', 'password')}),
         (_('Personal Info'), {'fields': ('name', )}),
         (
             _('Permissions'),
@@ -23,8 +23,9 @@ class UserAdmin(BaseUserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide', ),
-            'fields': ('email','password1','password2')
+            'fields': ('email', 'password1', 'password2')
         }),
     )
+
 
 admin.site.register(models.User, UserAdmin)

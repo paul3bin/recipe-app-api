@@ -98,7 +98,7 @@ class PrivateTagsApiTests(TestCase):
 
         recipe.tags.add(tag1)
 
-        # assigned_only is a filter that returns the tags that are assigned only.
+        # assigned_only is a filter that return tags that are assigned only.
         # passing value 1 for assigned_only means True
         res = self.client.get(TAGS_URL, {'assigned_only': 1})
 
